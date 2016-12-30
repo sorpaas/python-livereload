@@ -130,7 +130,7 @@ class Watcher(object):
         return False
 
     def is_glob_changed(self, path, ignore=None):
-        for f in glob.glob(path):
+        for f in glob.glob(path, recursive=True):
             if self.is_file_changed(f, ignore):
                 return True
         return False
